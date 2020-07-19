@@ -1,9 +1,10 @@
 import React from 'react';
 
-function ContactPage(props){
-
+class ContactPAge extends React.Component {
+    
+    
     return(
-        <p>ContactPAge Works</p>
+        
     );
 }
 
