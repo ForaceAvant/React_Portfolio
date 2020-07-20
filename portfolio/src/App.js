@@ -23,15 +23,15 @@ class App extends React.Component{
         {title: 'Contact', path: '/contact'}
       ],
       home: {
-        title: 'SAMPLE TITLE',
-        subTitle: 'SAMPLE SUBTITLE',
-        text: 'SAMPLE SMALLER TEXT'
+        title: 'Build. React. Adapt.',
+        subTitle: 'Always striving to learn and create.',
+        text: 'Check out some of my work below by clicking on the cards!'
       },
       about: {
-        title: 'SAMPLE TITLE',
+        title: 'About Me',
       },
       contact: {
-        title: 'SAMPLE TITLE',
+        title: 'Contact Me',
       }
     }
   }
@@ -40,8 +40,8 @@ class App extends React.Component{
     return (
       <Router>
         <Container className="p-0" fluid={true}>
-        <Navbar className='border-bottom' bg="transparent" expand="lg">
-                <Navbar.Brand>Forace Avant</Navbar.Brand>
+        <Navbar className='foot-head-color' expand="lg">
+                <Navbar.Brand><strong>Forace Avant</strong></Navbar.Brand>
                 <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
                 <Navbar.Collapse id="navbar-toggle">
                     <Nav className="ml-auto">

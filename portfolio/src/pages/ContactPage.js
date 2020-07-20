@@ -1,71 +1,24 @@
 import React from 'react';
-import Jumbo from '../components/Jumbo'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import Content from '../components/Content'
+import Jumbo from '../components/Jumbo';
+import Content from "../components/Content";
+import ListGroup from "react-bootstrap/ListGroup"
 
-class ContactPage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: '',
-            email: '',
-            message: '',
-            disable: false,
-            emailSent: null
-        }
-    }
+function ContactPage(props) {
 
-    handleChange = (event) => {
-        const target = event.target;
-        const value = target.value; 
-        const name = target.name;
-
-        this.setState({
-            [name]: value
-        })
-    }
-
-    handleSubmit = (event) => {
-        event.preventDefault();
-
-        this.setState({
-            disabled: true,
-            emailSent: true
-        })
-    }
-
-    render() {
-        return (
+    return (
         <div>
-            <Jumbo title={this.props.title} />
+            <Jumbo title={props.title} />
 
             <Content>
-                <Form onSubmit={this.handleSubmit}>
-                    <Form.Group>
-                        <Form.Label htmlFor="full-name">Full Name</Form.Label>
-                        <Form.Control id="full-name" name= "name" type="text" value={this.state.name} onChange={this.handleChange} />
-                    </Form.Group>
-
-                    <Form.Group>
-                        <Form.Label htmlFor="email">Email</Form.Label>
-                        <Form.Control id="email" name= "email" type="email" value={this.state.email} onChange={this.handleChange} />
-                    </Form.Group>
-
-                    <Form.Group>
-                        <Form.Label htmlFor="message">Message</Form.Label>
-                        <Form.Control id="message" name= "message" as="textarea" rows="4" value={this.state.message} onChange={this.handleChange} />
-                    </Form.Group>
-
-                    <Button className="d-inline-block" variant="primary" type="submit" disabled={this.state.disabled} >Send</Button>
-
-                    {this.state.emailSent === true && <p className="d-inline success-msg">Email Sent</p>}
-                    {this.state.emailSent === false && <p className="d-inline err-msg">Email Sent</p>}
-                </Form>
+                <ListGroup variant="flush">
+                    <ListGroup.Item><strong>Email:</strong> themattavant@gmail.com</ListGroup.Item>
+                    <ListGroup.Item action href="https://www.linkedin.com/in/forace-avant-4805a619a/"><strong>LinkedIn:</strong> Forace Avant</ListGroup.Item>
+                    <ListGroup.Item action href="https://github.com/ForaceAvant"><strong>Github:</strong> Forace Avant</ListGroup.Item>
+                    <ListGroup.Item><strong>Phone:</strong> (478)-308-2506</ListGroup.Item>
+                </ListGroup>
             </Content>
         </div>
     );
-    }
 }
 
 export default ContactPage;
